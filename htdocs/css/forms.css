@@ -1,0 +1,47 @@
+/*
+* FORM RELATED
+*/
+.no-columns form{
+	margin-left: 30px;
+}
+
+form table td{
+	padding: 8px;
+}
+.field-error{
+	color: red;
+	font-weight: bold;
+}
+.error{
+	color: red;
+	font-weight: bold;
+}
+form input{
+	width: 350px;
+	font: normal 14px/1.6 "Helvetica Neue", Helvetica, Arial, sans-serif;
+	border: 1px solid #eeeeee;
+	border-radius: 4px; 
+}
+form select{
+	width: 350px;
+	font: normal 14px/2.0 "Helvetica Neue", Helvetica, Arial, sans-serif;
+	border: 1px solid #eeeeee;
+	border-radius: 4px; 
+}
+form textarea{
+	width: 350px; 
+	height: 100px;
+	font: normal 14px/1.6 "Helvetica Neue", Helvetica, Arial, sans-serif;
+	border: 1px solid #eeeeee;
+	border-radius: 4px;
+}
+form button{
+	font: normal 16px/1.8 "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+	
+	border: 1px solid #eeeeee;
+	border-radius: 4px;
+	width: 350px;
+}
+.action-completed{
+	margin-bottom: 40px;
+}

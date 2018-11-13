@@ -1,0 +1,44 @@
+img{
+	border: 0; 
+}
+
+.slides-image{
+	width: 1000px;
+	height: 350px;
+}
+.trip-side{
+	width: 280px;
+	height: 187px;
+}
+
+#logo-tl{
+	width: 304px; 
+	height: 26px;  
+	display: block; 
+	margin-bottom: -4px;
+}
+
+.facebook-logo{
+	background-image: url(/images/fb.png);
+	background-position: left center;
+	background-repeat: no-repeat;
+}
+
+.fancybox-custom .fancybox-skin {
+	box-shadow: 0 0 50px #222;
+}
+
+#banner{
+	width: 1000px;
+	height: 300px;
+}
+#no-banner-cms-ui{
+	margin-top: -16px; 
+	margin-left: 30px;
+}
+
+
+
+.image-link:hover{
+	opacity: 0.7;
+}
