@@ -13,5 +13,6 @@ _config.php
 dbconfig.php
 oauth.json
 dump.sql*
-uploads/*
+htdocs/uploads/*
+htdocs/assets/*
 !readme
