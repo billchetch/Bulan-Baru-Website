@@ -1,0 +1,17 @@
+.svn*
+svn-*
+.metadata/*
+.project
+.DS_Store
+.buildpath
+.settings
+.csvignore
+config.php
+local.php
+_settings.php
+_config.php
+dbconfig.php
+oauth.json
+dump.sql*
+uploads/*
+!readme
