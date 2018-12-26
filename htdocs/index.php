@@ -7,6 +7,7 @@ $ss = null;
 $url = null;
 $alert = null;
 try{
+	
 	//default landing page
 	$sid = isset($_GET['page']) && $_GET['page'] ? $_GET['page'] : 'home';
 	if(strpos($sid, 'index') === 0)$sid = 'home';
