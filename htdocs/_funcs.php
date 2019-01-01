@@ -44,8 +44,14 @@ function getResourceHTML($resource, $vals = null){
 			return $html;
 			
 		case '{FB}':
+		case '{FACEBOOK}':
 			$html = '<a href="'._FB_.'" target="blank"><img src="/images/fb.png" align="absmiddle"/> FACEBOOK</a>';
 			return $html;
+			
+		case '{IG}':
+		case '{INSTAGRAM}':
+			$html = '<a href="'._IG_.'" target="blank"><img src="/images/ig.png" align="absmiddle"/> INSTAGRAM</a>';
+			return $html;	
 			
 		case '{BP}':
 			return '<a href="http://bulan-purnama.com/" target="blank">Bulan Purnama</a>';

@@ -523,7 +523,11 @@ hr{
 </style>
 
 </head>
+
 <body>
+<?php
+try{ 
+?>
 	<!-- header -->
 	<div id="nav">
 		<div id="nav-inner">
@@ -604,6 +608,11 @@ hr{
 		</div>
 	</div>
 	<div id="site-copyright">&copy; chetch 2014</div>
+<?php
+} catch (Exception $e){
+	echo "Unable to render body: ".$e->getMessage();
+}
+?>
 </body>
 
 <?php
