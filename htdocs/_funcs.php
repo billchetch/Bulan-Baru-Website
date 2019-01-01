@@ -97,7 +97,7 @@ function getElementCopy($page, $elt){
 	$copy = isset($elt['copy']) ? $elt['copy'] : null;
     if($copy){
     	$copy = $page->cleanCopy($copy, 'simple', '<h1><h2><h3><h4><span><img>');
-    	$resources = explode(',', '{BB},{BBSC},{EMAIL},{FB},{TEL},{CONTACT},{TERMS},{BP},{PROMO_IMAGE_1},{PROMO_IMAGE_OV},{PROMO_IMAGE_PR},{PROMO_IMAGE_MS}');
+    	$resources = explode(',', '{BB},{BBSC},{EMAIL},{FB},{IG},{INSTAGRAM},{FACEBOOK},{TEL},{CONTACT},{TERMS},{BP},{PROMO_IMAGE_1},{PROMO_IMAGE_OV},{PROMO_IMAGE_PR},{PROMO_IMAGE_MS}');
     	foreach($resources as $resource){
     		$copy = str_replace($resource, getResourceHTML($resource), $copy);
     	}
