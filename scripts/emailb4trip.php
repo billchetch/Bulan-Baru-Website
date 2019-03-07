@@ -33,7 +33,7 @@ try{
 	foreach($rows as $r){
 		$s = trim($r['email_list']);
 		if(empty($s)){
-			//$log->logWarning("No email addresses attached to this trip schedule so continuing...");
+			// $log->logWarning("No email addresses attached to this trip schedule (".($r['id']).") so continuing...");
 			continue;
 		}
 		$s = explode(',', $s);

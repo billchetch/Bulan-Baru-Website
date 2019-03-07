@@ -6,8 +6,8 @@ $log->start("Test script");
 
 
 try{
-	$schds = Dataset::get($_db, 'schedule', $god);
-	
+	$email = 'xxx'; //@x.com';
+	Validate::email($email);
 	
 		
 } catch (Exception $e){
