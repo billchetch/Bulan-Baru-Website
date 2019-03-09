@@ -381,7 +381,7 @@ hr{
 	height: 350px;
 	overflow: hidden;
 	padding: 0px;
-	display: none;
+	display: block;
 	position: relative;
 }
 
