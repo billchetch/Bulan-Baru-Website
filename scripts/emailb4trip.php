@@ -10,8 +10,8 @@ $log->start("Email guests before trip");
 
 $config = array(
 	'send'=>1,
-	'emailb4trip'=>50,
-	'emailb4trip_template'=>'../templates/emailb4trip.html',
+	'emailb4trip'=>60,
+	'emailb4trip_template'=>realpath($root.'/../templates/emailb4trip.html'),
 	'emailfrom'=>'info@bulan-baru.com',
 	'emailfromname'=>'Bulan Baru',
 	'emailsubject'=>'BULAN BARU - Your upcoming trip'
@@ -57,7 +57,7 @@ try{
 			
 			$log->logInfo("Sending emailb4trip for schedule with ID ".$r['id']);
 			$template = $config['emailb4trip_template'];
-			$emailBody = createEmailBodyFromTemplate($_db, $domain, 'emailb4trip', $config['emailb4trip_template'], $r);
+			$emailBody = createEmailBodyFromTemplate($_db, $domain, 'emailb4trip', $template, $r);
 			$subject = $config['emailsubject'];
 			$mail->Subject = $subject;
 			$mail->Body = $emailBody;
