@@ -35,6 +35,9 @@
 		#schedule th,td{
 			padding: 2px 6px 2px 6px;
 		}
+		.si-not-available{
+			color: #666666;
+		}
 		.trip-enquiry{
 			padding-right: 8px;
 			text-align: right;
@@ -56,6 +59,7 @@
 		#prev-next-trip{
 			
 		}
+		
 		
 		/* wave */
 		.location-1{ 
@@ -172,7 +176,7 @@
 								foreach($schedule as $si){
 						?>
 						
-						<table class="schedule-item" cellspacing="0">
+						<table class="schedule-item <?php echo $si['availablility'] == 'FULL' ? 'si-not-available' : ''; ?>" cellspacing="0">
 							<tr>
 								<th align="left" width="160px">Departs</th>
 								<th align="left" width="160px">Arrives</th>
@@ -192,7 +196,7 @@
 								<div class="comments"><?php echo $si['comments']; ?></div>
 								<?php } ?>
 								</td>
-								<td colspan="2" class="trip-enquiry"><a href="<?php echo $si['href']; ?>">Enquire about this trip &raquo;</a></td>
+								<td colspan="2" class="trip-enquiry si-not-available"><a href="<?php echo $si['href']; ?>"><span class="<?php echo $si['availablility'] == 'FULL' ? 'si-not-available' : ''; ?>">Enquire about this trip &raquo;</span></a></td>
 							</tr>
 						</table>
 						<?php } 

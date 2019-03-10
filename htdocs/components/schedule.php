@@ -32,6 +32,9 @@
 			padding-right: 8px;
 			text-align: right;
 		}
+		.si-not-available{
+			color: #888888;
+		}
 		#schedule{
 			
 		}
@@ -68,9 +71,9 @@
 						$trip = getTrip($page, $si['trip_id']);
 						?>
 				
-					<tr>
+					<tr class="<?php echo $si['availablility'] == 'FULL' ? 'si-not-available' : ''; ?>">
 						<td valign="top" width="320px">
-							<a href="<?php echo $trip['href']; ?>"><?php echo $si['trip']; ?></a>
+							<a href="<?php echo $trip['href']; ?>"><span class="<?php echo $si['availablility'] == 'FULL' ? 'si-not-available' : ''; ?>"><?php echo $si['trip']; ?></span></a>
 							<?php if(!empty($si['comments'])){ ?>
 							<div class="comments"><?php echo $si['comments']; ?></div>
 							<?php } ?>
@@ -79,7 +82,7 @@
 						<td><?php echo $si['arrive']; ?></td>
 						<td valign="top" align="center"><?php echo $si['availablility']; ?></td>
 						<td valign="top" align="center"><?php echo $si['fprice']; ?></td>
-						<td valign="middle"><a href="<?php echo $si['href']; ?>">Enquire &raquo;</a></td>
+						<td valign="middle"><a href="<?php echo $si['href']; ?>"><span class="<?php echo $si['availablility'] == 'FULL' ? 'si-not-available' : ''; ?>">Enquire &raquo;</span></a></td>
 					</tr>
 				<?php } ?>
 				</table>
