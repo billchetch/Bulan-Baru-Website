@@ -2,8 +2,7 @@
 require('_settings.php');
 $mailer = 'PHPMailer_v5.0.2';
 require("$phplib/$mailer/class.phpmailer.php");
-
-require('../htdocs/_funcs.php');
+require($root.'/_funcs.php');
 
 $log->setEcho(Logger::ECHO_AND_LOG);
 $log->start("Email guests before trip");
