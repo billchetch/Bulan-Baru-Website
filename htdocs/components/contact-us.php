@@ -14,7 +14,7 @@
 					$fm->save();
 				} 
 				if(isset($_GET['action']) && $_GET['action'] == 'contact' && !$fm->hasErrors()){
-					echo '<div class="action-completed"><h4>Thank you for getting in touch, your email has been sent to '_EMAIL_.'.  We will reply shortly. </h4></div>';
+					echo '<div class="action-completed"><h4>Thank you for getting in touch, your email has been sent to '._EMAIL_.'.  We will reply shortly. </h4></div>';
 				} else { ?>
 				<h2>CONTACT US</h2>
 				<?php require('components/maincopy.php'); ?>
