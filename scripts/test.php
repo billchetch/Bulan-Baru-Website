@@ -17,8 +17,11 @@ try{
 	
 	$mail->Subject = "test";
 	$mail->Body = "test";
-	$mail->From = 'info@bulan-baru.com';
+	$mail->From = 'bill@chetch.net';
 	$mail->FromName = 'BB';
+	
+	$mail->ClearAddresses();
+	$mail->AddAddress('bill@bulan-baru.com');
 	
 	echo $mail->Send();
 		
