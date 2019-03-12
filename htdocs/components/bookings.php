@@ -18,7 +18,7 @@ if(!$fm){
 			<div id="bookings" class="no-columns2">
 				<?php 
 				if(isset($_GET['action']) && $_GET['action'] == 'booking' && !$fm->hasErrors()){
-					echo '<div class="action-completed"><h4>Thank you for your enquiry.  We will be in touch soon</h4></div>';
+					echo '<div class="action-completed"><h4>Thank you for your enquiry. An email has been sent to '._EMAIL_.'. We will be in touch soon</h4></div>';
 				} else { ?>
 				<h2>BOOKINGS</h2>
 				<?php require('components/maincopy.php'); ?>
