@@ -334,6 +334,15 @@ function sendEmail($email){
 	$mail = new PHPMailer();
 	$mail->SetLanguage('en', $phplib.'phpmailer/language/');
 	$mail->IsHTML(false);
+	
+	if(defined('_SMTP_HOST_'))$mail->Host = _SMTP_HOST_;
+	if(defined('_SMTP_SECURE_'))$mail->SMTPSecure = _SMTP_SECURE_;
+	if(defined('_SMTP_PORT_'))$mail->Port = _SMTP_PORT_;
+	if(defined('_SMTP_USERNAME_')){
+		$mail->SMTPAuth = true; 
+		$mail->Username = _SMTP_USERNAME_;
+		$mail->Password = _SMTP_PASSWORD_;
+	}
 						
 	$mail->Body = $email['body'];
 	$mail->Subject = $email['subject'];
