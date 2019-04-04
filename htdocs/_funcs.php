@@ -329,7 +329,7 @@ function sendEmail($page, $email){
 	
 	
 	
-	$phplib = _SITESROOT_.'services/lib/php/';
+	$phplib = _SITESROOT_.'webapps/lib/php/';
 	require($phplib.'phpmailer/class.phpmailer.php');
 	$mail = new PHPMailer();
 	$mail->SetLanguage('en', $phplib.'phpmailer/language/');
@@ -354,17 +354,16 @@ function sendEmail($page, $email){
 	
 	$db = $page->getDB();
 	$vals2save = array();
-	$vals2save['to'] = _EMAIL_;
-	$vals2save['from'] = $mail->From;
-	$vals2save['from_name'] = $mail->FromName;
+	$vals2save['recipient'] = _EMAIL_;
+	$vals2save['sender'] = $mail->From;
+	$vals2save['sender_name'] = $mail->FromName;
 	$vals2save['subject'] = $mail->Subject;
 	$vals2save['body'] = $mail->Body;
 	try{
-		$db->insert("sys_emails", $vals2save);
+		$insertId = $db->insert("sys_emails", $vals2save);
 	} catch (Exception $e){
-	
+		throw $e;
 	}
-	
 	
 	return $retVal;
 }
