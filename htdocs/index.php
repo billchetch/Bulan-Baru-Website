@@ -91,7 +91,7 @@ try{
 						$msg = $nameAndEmail." has made an enquiry about ".$si['trip_and_dates'];
 						if($comments)$msg.= "\n\n".$comments;
 						$vals = array('from'=>$email, 'name'=>$name, 'subject'=>$subject, 'body'=>$msg);
-						if(!sendEmail($vals)){
+						if(!sendEmail($page, $vals)){
 							$fm->error = "There has been a problem sending your info.  Please try again";
 						}
 					}
@@ -115,7 +115,7 @@ try{
 						$nameAndEmail = $name.' <'.$email.'>';
 						$msg = $nameAndEmail." has sent the following message: \n\n".$comments;
 						$vals = array('from'=>$email, 'name'=>$name, 'subject'=>$subject, 'body'=>$msg);
-						if(!sendEmail($vals)){
+						if(!sendEmail($page, $vals)){
 							$fm->error = "There has been a problem sending your info.  Please try again";
 						}
 					}

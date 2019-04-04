@@ -321,7 +321,7 @@ function getEmailScore($body){
 	return $score;
 }
 
-function sendEmail($email){
+function sendEmail($page, $email){
 	//do some validating here
 	$body = $email['body'];
 	$score = getEmailScore($body);
@@ -350,7 +350,23 @@ function sendEmail($email){
 	$mail->FromName = $email['name'];
 	
 	$mail->AddAddress(_EMAIL_);
-	return $mail->Send();
+	$retVal = $mail->Send();
+	
+	$db = $page->getDB();
+	$vals2save = array();
+	$vals2save['to'] = _EMAIL_;
+	$vals2save['from'] = $mail->From;
+	$vals2save['from_name'] = $mail->FromName;
+	$vals2save['subject'] = $mail->Subject;
+	$vals2save['body'] = $mail->Body;
+	try{
+		$db->insert("sys_emails", $vals2save);
+	} catch (Exception $e){
+	
+	}
+	
+	
+	return $retVal;
 }
 
 function getEmailKey($eseed){
