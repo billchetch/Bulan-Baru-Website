@@ -329,7 +329,7 @@ function sendEmail($page, $email){
 	
 	
 	
-	$phplib = _SITESROOT_.'webapps/lib/php/';
+	$phplib = _SITESROOT_.'services/lib/php/';
 	require($phplib.'phpmailer/class.phpmailer.php');
 	$mail = new PHPMailer();
 	$mail->SetLanguage('en', $phplib.'phpmailer/language/');
