@@ -334,6 +334,7 @@ function sendEmail($page, $email){
 	$mail = new PHPMailer();
 	$mail->SetLanguage('en', $phplib.'phpmailer/language/');
 	$mail->IsHTML(false);
+	$mail->IsSMTP();
 	
 	if(defined('_SMTP_HOST_'))$mail->Host = _SMTP_HOST_;
 	if(defined('_SMTP_SECURE_'))$mail->SMTPSecure = _SMTP_SECURE_;
