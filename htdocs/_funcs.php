@@ -347,8 +347,7 @@ function sendEmail($page, $email){
 						
 	$mail->Body = $email['body'];
 	$mail->Subject = $email['subject'];
-	$mail->From = $email['from'];
-	$mail->FromName = $email['name'];
+	$mail->From = 'info@bulan-baru.com';
 	
 	$mail->AddAddress(_EMAIL_);
 	$retVal = $mail->Send();
@@ -356,8 +355,8 @@ function sendEmail($page, $email){
 	$db = $page->getDB();
 	$vals2save = array();
 	$vals2save['recipient'] = _EMAIL_;
-	$vals2save['sender'] = $mail->From;
-	$vals2save['sender_name'] = $mail->FromName;
+	$vals2save['sender'] = $email['from'];
+	$vals2save['sender_name'] = $email['name'];
 	$vals2save['subject'] = $mail->Subject;
 	$vals2save['body'] = $mail->Body;
 	try{
