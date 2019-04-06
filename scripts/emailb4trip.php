@@ -21,6 +21,7 @@ $config = array(
 try{
 	$mail = new PHPMailer(true);
 	$mail->SetLanguage('en', "$phplib/$mailer/language/");
+	$mail->IsSMTP();
 	$mail->IsHTML(true);
 	$mail->CharSet = 'UTF-8';
 	if(defined('_SMTP_HOST_'))$mail->Host = _SMTP_HOST_;
