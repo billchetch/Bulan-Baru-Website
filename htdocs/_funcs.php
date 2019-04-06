@@ -327,8 +327,6 @@ function sendEmail($page, $email){
 	$score = getEmailScore($body);
 	if($score >= 1)return false;
 	
-	
-	
 	$phplib = _SITESROOT_.'services/lib/php/';
 	require($phplib.'phpmailer/class.phpmailer.php');
 	$mail = new PHPMailer();
@@ -348,8 +346,10 @@ function sendEmail($page, $email){
 	$mail->Body = $email['body'];
 	$mail->Subject = $email['subject'];
 	$mail->From = 'info@bulan-baru.com';
-	
 	$mail->AddAddress(_EMAIL_);
+	$mail->FromName = $email['name'];
+	$mail->AddReplyTo($email['from'], $email['name']);
+	
 	$retVal = $mail->Send();
 	
 	$db = $page->getDB();
