@@ -395,7 +395,7 @@ function createEmailBodyFromTemplate($db, $domain, $emailName, $template, $data 
 	$replacements['BANNER_BOTTOM_IMAGE'] = $replacements['IMAGE_SRC_ROOT'].'/email/banner-bottom-'.rand(1,2).'.jpg';
 	$replacements['PHOTOG_NAME'] = '@dobbydigital';
 	$replacements['PHOTOG_URL'] = 'http://www.instagram.com/dobbydigital';
-	$replacements['PHOTOG_PPP'] = '300 AUD';
+	$replacements['PHOTOG_PPP'] = '350 AUD';
 	$replacements['BEER_FREE_CRATES'] = '10';
 	$replacements['BEER_CRATE_COST'] = '50 AUD';
 	$replacements['EMAIL_REPLYTO_ADDRESS'] = 'info@bulan-baru.com';
