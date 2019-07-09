@@ -99,7 +99,9 @@ try{
 					$log->logInfo("Sending to $ea");
 				}
 			}
-		} //b4 trips email
+		} else { //b4 trips email
+			$log->logInfo("Trip with schedule ID ".$r['id']." starts in $days days which is more than the required minimum of ".$config['emailb4trip']." days");
+		}
 	}
 	
 	
