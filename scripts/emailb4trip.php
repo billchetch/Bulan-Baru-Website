@@ -40,7 +40,6 @@ try{
 	$schds->select($rows, $filter, 'depart_date');
 	$log->logInfo("Checking ".count($rows)." trips...");	
 	foreach($rows as $r){
-		$log->logInfo("Checking schedule ".$r['id']);
 		$s = trim($r['email_list']);
 		if(empty($s)){
 			$log->logWarning("No email addresses attached to this trip schedule (".($r['id']).") so continuing...");
