@@ -61,6 +61,9 @@ function getResourceHTML($resource, $vals = null){
 			
 		case '{TERMS}':
 			return getResourceHTML('{link:terms-and-conditions:terms}');
+			
+		case '{BOAT}':
+			return getResourceHTML('{link:boat:boat}');
 		
 		case '{PROMO_IMAGE_OV}': //opera villa
 			$html = '<a href="http://www.operavilla.com" class="image-link"><img src="/images/promo-image-1.png" class="trip-thumb"/></a>';

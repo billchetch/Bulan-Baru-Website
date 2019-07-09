@@ -37,7 +37,8 @@ try{
 	
 	$rows = array();
 	$filter = "depart_date>now() AND trp_schedule.active=1";
-	$schds->select($rows, $filter, 'depart_date');	
+	$schds->select($rows, $filter, 'depart_date');
+	$log->logInfo("Checking ".count($rows)." trips...");	
 	foreach($rows as $r){
 		$s = trim($r['email_list']);
 		if(empty($s)){
