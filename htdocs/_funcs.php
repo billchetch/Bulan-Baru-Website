@@ -400,7 +400,7 @@ function createEmailBodyFromTemplate($db, $domain, $emailName, $template, $data 
 	$replacements['PHOTOG_URL'] = 'http://www.instagram.com/dobbydigital';
 	$replacements['PHOTOG_PPP'] = '350 AUD';
 	$replacements['BEER_FREE_CRATES'] = '10';
-	$replacements['BEER_CRATE_COST'] = '50 AUD';
+	$replacements['BEER_CRATE_COST'] = '60 AUD';
 	$replacements['EMAIL_REPLYTO_ADDRESS'] = 'info@bulan-baru.com';
 	$replacements['CHECKLIST_URL'] = 'http://'.$domain.'/checklist';
 	$replacements['FAQ_URL'] = 'http://'.$domain.'/faq';
