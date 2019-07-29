@@ -312,7 +312,7 @@ function getScheduleItem($page, $id){
 
 function getEmailScore($body){
 	$score = 0;
-	$badStrings = array('http:'=>1, 'https:'=> 1, 'www.'=>1, 'website'=>0.5, 'traffic'=>0.5, 'ranking'=>0.5, 'design'=>0.5, 'search engine'=>1);
+	$badStrings = array('http:'=>1, 'https:'=> 1, 'www.'=>1, 'website'=>0.5, 'traffic'=>0.5, 'ranking'=>0.5, 'design'=>0.5, 'search engine'=>1, 'free test'=>1);
 	foreach($badStrings as $bs=>$sc){
 		$matches = array();
 		preg_match_all('/'.addslashes($bs).'/', $body, $matches);

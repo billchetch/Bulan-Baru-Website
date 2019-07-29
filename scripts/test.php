@@ -6,7 +6,7 @@ $log->start("Test script");
 
 
 try{
-	$mailer = 'PHPMailer_v5.0.2';
+	/*$mailer = 'PHPMailer_v5.0.2';
 	require("$phplib/$mailer/class.phpmailer.php");
 	require($root.'/_funcs.php');
 
@@ -23,7 +23,7 @@ try{
 	$mail->ClearAddresses();
 	$mail->AddAddress('bill@bulan-baru.com');
 	
-	echo $mail->Send();
+	echo $mail->Send();*/
 		
 } catch (Exception $e){
 	$log->logException($e->getMessage());
