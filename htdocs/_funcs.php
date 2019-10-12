@@ -17,6 +17,9 @@ function getCMSForm($form, $obj = null, $settings = null){
 		case 'slides-gallery':
 			return CMS::getFunctionality('slides', 'gallery', 'galleries', 1, 'fileDirId=8&imageWidth=120&imageHeight=42');
 			
+		case 'menu-gallery':
+			return CMS::getFunctionality('menu images', 'gallery', 'galleries', 3, 'fileDirId=15&imageWidth=90&imageHeight=60');
+			
 		case 'trip':
 			return CMS::getFunctionality('trip', 'misc/bulan_baru/trips', 'trips', $obj['id'], $settings);
 			
@@ -166,7 +169,7 @@ function getImage($page, $imageID, $sizePrefix = null){
 }
 
 function getGalleryImages($page, $gallery){
-	$gmap = array('slides'=>1, 'boat'=>2);
+	$gmap = array('slides'=>1, 'boat'=>2, 'menu'=>3);
 	$gid = isset($gmap[$gallery]) ? $gmap[$gallery] : null;
 	if(!$gid)throw new Exception("No such gallery as $gallery");
 	$db = $page->getDB();
@@ -283,7 +286,7 @@ function getSchedule($page, $tid = null, $season = null){
 			$availability = "$availability left";
 		}
 		$si['availablility'] = $availability;
-		$si['fprice'] = number_format($si['price'], 0). ' AUD';
+		$si['fprice'] = number_format($si['price'], 0).' '.(!empty($si['currency']) ? $si['currency'] : 'AUD');
 		$dtime = strtotime($si['depart_date']) + 1000;
 		$atime = strtotime($si['arrive_date']) + 1000;
 		$si['depart_fdate'] = date('j F', $dtime);

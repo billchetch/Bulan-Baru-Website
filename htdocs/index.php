@@ -321,21 +321,21 @@ hr{
 	 height: 28px;
 }
 #logo-tl{
-	width: 347px;
-	height: 28px;
+	width: 330px;
+	/*height: 22px;*/
 }
 #nav-right{
 	float: right; 
 	margin: 0px;
 }
 #nav-right ul{
-	margin-top: 3px;
+	margin-top: 2px;
 	padding: 0;
 }
 #nav-right ul li{
 	display: inline;
-	padding-left: 16px;
-	padding-right: 4px;
+	padding-left: 10px;
+	padding-right: 2px;
 	color: #eeeeee;
 }
 
@@ -540,13 +540,26 @@ try{
 				<span style="font-size: 11px; font-weight: bold; color: white"><a href="<?php echo Website::getPageURL('home'); ?>"><?php echo $home; ?></a></span><span id="breadcrumb" style="font-size: 11px; font-weight: bold; color: white"><?php echo $breadcrumb; ?></span>
 			</div>
 			<div id="nav-right">
+				<?php 
+				$icons = array('full', 'half-right', 'new', 'half-left');
+				$items = array();
+				array_push($items, array('trips', 'TRIPS'));
+				array_push($items, array('schedule', 'SCHEDULE'));
+				array_push($items, array('bookings', 'BOOKINGS'));
+				array_push($items, array('boat', 'BOAT'));
+				//array_push($items, array('menu', 'MENU'));
+				array_push($items, array('team', 'TEAM'));
+				array_push($items, array('contact-us', 'CONTACT'));
+				
+				?>
 				<ul>
-					<li><img src="/images/phases/i-phase-full.png" class="phase-icon"/><a href="<?php echo Website::getPageURL('trips'); ?>">TRIPS</a></li>
-					<li><img src="/images/phases/i-phase-half-right.png" class="phase-icon"/><a href="<?php echo Website::getPageURL('schedule'); ?>">SCHEDULE</a></li>
-					<li><img src="/images/phases/i-phase-quarter-right.png" class="phase-icon"/><a href="<?php echo Website::getPageURL('bookings'); ?>">BOOKINGS</a></li>
-					<li><img src="/images/phases/i-phase-new.png" width="14" class="phase-icon"/><a href="<?php echo Website::getPageURL('boat'); ?>">BOAT</a></li>
-					<li><img src="/images/phases/i-phase-quarter-left.png" width="14" class="phase-icon"/><a href="<?php echo Website::getPageURL('team'); ?>">TEAM</a></li>
-					<li><img src="/images/phases/i-phase-half-left.png" class="phase-icon"/><a href="<?php echo Website::getPageURL('contact-us'); ?>">CONTACT</a></li>
+				<?php 
+				for($i = 0; $i < count($items); $i++){
+					$item = $items[$i];
+					$icon = $icons[$i % count($icons)];
+				?>
+					<li><img src="/images/phases/i-phase-<?php echo $icon; ?>.png" class="phase-icon"/><a href="<?php echo Website::getPageURL($item[0]); ?>"><?php echo $item[1]; ?></a></li>
+				<?php } ?>
 				</ul>
 			</div>
 			<div style="clear: both"></div> 
@@ -559,7 +572,7 @@ try{
 		$component = $sid; 
 		if($page->getPath(0) == 'trips') {
 			$component = ($page->getPathLength() > 1) ? 'trip' : 'trips'; 
-		} elseif(!in_array($sid, array('home','bookings','contact-us','schedule','boat','faq','checklist','team'))){
+		} elseif(!in_array($sid, array('home','bookings','contact-us','schedule','boat','menu','faq','checklist','team'))){
 			$component = 'template1';
 		} 
 		$require = "components/$component.php";
