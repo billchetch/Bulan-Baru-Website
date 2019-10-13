@@ -160,7 +160,7 @@ $css = array();
 array_push($js, _JQUERY_);
 array_push($css, '/css/common.css');
 $useSlides = in_array($sid, array('home'));
-$useFancyBox = in_array($sid, array('boat', 'home')) || ($page->getPath(0) == 'trips' && $page->getPathLength() > 1);
+$useFancyBox = in_array($sid, array('boat', 'home', 'menu')) || ($page->getPath(0) == 'trips' && $page->getPathLength() > 1);
 $hasForms = in_array($sid, array('bookings','contact-us'));  
 //add slides
 if($useSlides)array_push($js, "/lib/js/jquery/jquery.slides.min.js");
@@ -547,7 +547,7 @@ try{
 				array_push($items, array('schedule', 'SCHEDULE'));
 				array_push($items, array('bookings', 'BOOKINGS'));
 				array_push($items, array('boat', 'BOAT'));
-				if(_STAGING_)array_push($items, array('menu', 'MENU'));
+				array_push($items, array('menu', 'MENU'));
 				array_push($items, array('team', 'TEAM'));
 				array_push($items, array('contact-us', 'CONTACT'));
 				
