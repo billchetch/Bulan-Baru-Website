@@ -547,7 +547,7 @@ try{
 				array_push($items, array('schedule', 'SCHEDULE'));
 				array_push($items, array('bookings', 'BOOKINGS'));
 				array_push($items, array('boat', 'BOAT'));
-				array_push($items, array('menu', 'MENU'));
+				//array_push($items, array('menu', 'MENU'));
 				array_push($items, array('team', 'TEAM'));
 				array_push($items, array('contact-us', 'CONTACT'));
 				
