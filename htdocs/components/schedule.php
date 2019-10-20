@@ -85,7 +85,9 @@
 						<td valign="middle">
 						<?php if($si['availablility'] != 'FULL'){ ?>
 							<a href="<?php echo $si['href']; ?>"><span class="">Enquire &raquo;</span></a>
-						<?php } ?>
+						<?php } else {
+							echo "&nbsp;";
+						} ?>
 						</td>
 					</tr>
 				<?php } ?>
