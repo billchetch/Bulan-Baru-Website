@@ -45,7 +45,7 @@
 			<?php } ?>
 			<!-- column 1 -->
 			<div class="column1">
-				<h2>OUR MENU...</h2>
+				<h2>WHAT'S COOKING...</h2>
 				<?php require('components/maincopy.php'); ?>
 				
 				<!-- some links -->
