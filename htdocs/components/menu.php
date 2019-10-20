@@ -45,6 +45,7 @@
 			<?php } ?>
 			<!-- column 1 -->
 			<div class="column1">
+				<h2>OUR MENU...</h2>
 				<?php require('components/maincopy.php'); ?>
 				
 				<!-- some links -->
@@ -53,6 +54,7 @@
 					<li><a href="<?php echo Website::getPageURL('bookings'); ?>">Make an enquiry &raquo;</a></li>
 					<li><a href="<?php echo Website::getPageURL('schedule'); ?>">Full schedule &raquo;</a></li>
 				</ul>
+				
 			</div>
 			
 			<!-- column 2 -->
