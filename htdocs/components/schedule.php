@@ -82,7 +82,11 @@
 						<td><?php echo $si['arrive']; ?></td>
 						<td valign="top" align="center"><?php echo $si['availablility']; ?></td>
 						<td valign="top" align="center"><?php echo $si['fprice']; ?></td>
-						<td valign="middle"><a href="<?php echo $si['href']; ?>"><span class="<?php echo $si['availablility'] == 'FULL' ? 'si-not-available' : ''; ?>">Enquire &raquo;</span></a></td>
+						<td valign="middle">
+						<?php if($si['availablility'] != 'FULL'){ ?>
+							<a href="<?php echo $si['href']; ?>"><span class="">Enquire &raquo;</span></a>
+						<?php } else { echo "&nbsp;" } ?>
+						</td>
 					</tr>
 				<?php } ?>
 				</table>
