@@ -196,7 +196,13 @@
 								<div class="comments"><?php echo $si['comments']; ?></div>
 								<?php } ?>
 								</td>
-								<td colspan="2" class="trip-enquiry si-not-available"><a href="<?php echo $si['href']; ?>"><span class="<?php echo $si['availablility'] == 'FULL' ? 'si-not-available' : ''; ?>">Enquire about this trip &raquo;</span></a></td>
+								<td colspan="2" class="trip-enquiry si-not-available">
+								<?php if($si['availablility'] != 'FULL'){ ?>
+									<a href="<?php echo $si['href']; ?>"><span class="<?php echo $si['availablility'] == 'FULL' ? 'si-not-available' : ''; ?>">Enquire about this trip &raquo;</span></a>
+								<?php } else {
+									echo "&nbsp;"; 
+								} ?>
+								</td>
 							</tr>
 						</table>
 						<?php } 
