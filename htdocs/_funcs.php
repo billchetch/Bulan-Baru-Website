@@ -437,7 +437,7 @@ function createEmailBodyFromTemplate($db, $domain, $emailName, $template, $data 
 	
 	//get some images from the galleries to use
 	$gnames = array(1=>'SLIDE', 2=>'BOAT');
-	$gcounts = array(1=>0, 2=>0);
+	$gcounts = array(1=>0, 2=>0, 3=>0); //choose the galleries you want to use
 	$prefixes = array('xl', 'lg', 'md', 'sm', 'xs');
 	$sql = "* FROM ast_gallery_images WHERE online=1 ORDER BY gallery_id, rand()";
 	$rows = array();
@@ -445,8 +445,8 @@ function createEmailBodyFromTemplate($db, $domain, $emailName, $template, $data 
 	foreach($rows as $r){
 		$iid = $r['image_id'];
 		$img = $db->selectRow("* FROM ast_images WHERE id=$iid");
-		if($img){
-			$gid = $r['gallery_id'];
+		$gid = $r['gallery_id'];
+		if($img && isset($gcounts[$gid])){
 			$gcounts[$gid]++;
 			foreach($prefixes as $pfx){
 				$idx = strtoupper($gnames[$gid]).'_IMAGE_'.strtoupper($pfx).'_'.$gcounts[$gid];
